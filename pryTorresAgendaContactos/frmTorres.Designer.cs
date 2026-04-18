@@ -36,20 +36,20 @@
             this.dgvCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCategoría = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblCorreo = new System.Windows.Forms.Label();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.tboNombre = new System.Windows.Forms.TextBox();
+            this.tboApellido = new System.Windows.Forms.TextBox();
+            this.tboCorreo = new System.Windows.Forms.TextBox();
+            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.mtbTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.tboCorreo = new System.Windows.Forms.TextBox();
-            this.tboApellido = new System.Windows.Forms.TextBox();
-            this.tboNombre = new System.Windows.Forms.TextBox();
             this.gbBotones = new System.Windows.Forms.GroupBox();
-            this.cboCategoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColumna)).BeginInit();
             this.gbDatos.SuspendLayout();
             this.gbBotones.SuspendLayout();
@@ -114,45 +114,46 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Enter += new System.EventHandler(this.gbDatos_Enter);
             // 
-            // lblNombre
+            // cboCategoria
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(7, 20);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(55, 17);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre:";
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Items.AddRange(new object[] {
+            "Familia",
+            "Trabajo",
+            "Amigos"});
+            this.cboCategoria.Location = new System.Drawing.Point(136, 219);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(109, 21);
+            this.cboCategoria.TabIndex = 4;
             // 
-            // lblApellido
+            // tboNombre
             // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(7, 67);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(56, 17);
-            this.lblApellido.TabIndex = 1;
-            this.lblApellido.Text = "Apellido:";
+            this.tboNombre.Location = new System.Drawing.Point(137, 19);
+            this.tboNombre.Name = "tboNombre";
+            this.tboNombre.Size = new System.Drawing.Size(108, 20);
+            this.tboNombre.TabIndex = 0;
             // 
-            // lblTelefono
+            // tboApellido
             // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(7, 118);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(92, 17);
-            this.lblTelefono.TabIndex = 2;
-            this.lblTelefono.Text = "Nº de Teléfono:";
+            this.tboApellido.Location = new System.Drawing.Point(137, 67);
+            this.tboApellido.Name = "tboApellido";
+            this.tboApellido.Size = new System.Drawing.Size(108, 20);
+            this.tboApellido.TabIndex = 1;
             // 
-            // lblCorreo
+            // tboCorreo
             // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(7, 166);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(112, 17);
-            this.lblCorreo.TabIndex = 3;
-            this.lblCorreo.Text = "Correo electronico:";
+            this.tboCorreo.Location = new System.Drawing.Point(137, 166);
+            this.tboCorreo.Name = "tboCorreo";
+            this.tboCorreo.Size = new System.Drawing.Size(108, 20);
+            this.tboCorreo.TabIndex = 3;
+            // 
+            // mtbTelefono
+            // 
+            this.mtbTelefono.Location = new System.Drawing.Point(137, 118);
+            this.mtbTelefono.Mask = "(999)999-9999";
+            this.mtbTelefono.Name = "mtbTelefono";
+            this.mtbTelefono.Size = new System.Drawing.Size(108, 20);
+            this.mtbTelefono.TabIndex = 2;
             // 
             // lblCategoria
             // 
@@ -164,6 +165,46 @@
             this.lblCategoria.TabIndex = 4;
             this.lblCategoria.Text = "Categoría:";
             // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.Location = new System.Drawing.Point(7, 166);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(112, 17);
+            this.lblCorreo.TabIndex = 3;
+            this.lblCorreo.Text = "Correo electrónico:";
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(7, 118);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(92, 17);
+            this.lblTelefono.TabIndex = 2;
+            this.lblTelefono.Text = "Nº de Teléfono:";
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.Location = new System.Drawing.Point(7, 67);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(56, 17);
+            this.lblApellido.TabIndex = 1;
+            this.lblApellido.Text = "Apellido:";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(7, 20);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(55, 17);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre:";
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(20, 28);
@@ -172,6 +213,7 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
@@ -191,35 +233,6 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // mtbTelefono
-            // 
-            this.mtbTelefono.Location = new System.Drawing.Point(137, 118);
-            this.mtbTelefono.Mask = "(999)999-9999";
-            this.mtbTelefono.Name = "mtbTelefono";
-            this.mtbTelefono.Size = new System.Drawing.Size(108, 20);
-            this.mtbTelefono.TabIndex = 2;
-            // 
-            // tboCorreo
-            // 
-            this.tboCorreo.Location = new System.Drawing.Point(137, 166);
-            this.tboCorreo.Name = "tboCorreo";
-            this.tboCorreo.Size = new System.Drawing.Size(108, 20);
-            this.tboCorreo.TabIndex = 3;
-            // 
-            // tboApellido
-            // 
-            this.tboApellido.Location = new System.Drawing.Point(137, 67);
-            this.tboApellido.Name = "tboApellido";
-            this.tboApellido.Size = new System.Drawing.Size(108, 20);
-            this.tboApellido.TabIndex = 1;
-            // 
-            // tboNombre
-            // 
-            this.tboNombre.Location = new System.Drawing.Point(137, 19);
-            this.tboNombre.Name = "tboNombre";
-            this.tboNombre.Size = new System.Drawing.Size(108, 20);
-            this.tboNombre.TabIndex = 0;
-            // 
             // gbBotones
             // 
             this.gbBotones.Controls.Add(this.btnAgregar);
@@ -231,20 +244,12 @@
             this.gbBotones.TabIndex = 5;
             this.gbBotones.TabStop = false;
             // 
-            // cboCategoria
-            // 
-            this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(136, 219);
-            this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(109, 21);
-            this.cboCategoria.TabIndex = 4;
-            // 
             // frmAgendaContactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(812, 532);
+            this.ClientSize = new System.Drawing.Size(821, 532);
             this.Controls.Add(this.gbBotones);
             this.Controls.Add(this.gbDatos);
             this.Controls.Add(this.dgvColumna);
