@@ -38,6 +38,13 @@ namespace pryTorresAgendaContactos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            string nombre = tboNombre.Text.Trim();
+            string apellido = tboApellido.Text.Trim();
+            string correo = tboCorreo.Text.Trim();
+            string telefono = mtbTelefono.Text.Trim();
+            string categoria = cboCategoria.Text.Trim();
+            
+            
             if (tboNombre.Text == "")
             {
                 MessageBox.Show("Ingrese el nombre");
@@ -76,6 +83,14 @@ namespace pryTorresAgendaContactos
                                 
 
                             }
+                            dgvColumna.Rows.Add(nombre, apellido, telefono, correo, categoria);
+
+                            tboNombre.Clear();
+                            tboApellido.Clear();
+                            tboCorreo.Clear();
+                            mtbTelefono.Clear();
+                            cboCategoria.SelectedIndex = -1;
+                            tboNombre.Focus();
                         }
                     }
                 }
