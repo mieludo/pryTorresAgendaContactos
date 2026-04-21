@@ -12,14 +12,6 @@ namespace pryTorresAgendaContactos
 {
     public partial class frmAgendaContactos : Form
     {
-        //DECLARACION DE VARIABLES GLOBALES
-        string varNombre = "";
-        string varApellido = "";
-        string varCorreoElectronico = "";
-        string varCategoria = "";
-        int varTelefono = 0;
-
-
 
         public frmAgendaContactos()
         {
@@ -94,6 +86,67 @@ namespace pryTorresAgendaContactos
                         }
                     }
                 }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // Comprobar que hay una fila seleccionada
+            if (dgvColumna.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione el contacto que quiera eliminar");
+                return;
+            }
+
+            // Confirmación antes de eliminar
+            var resultado = MessageBox.Show(
+                "Quiere eliminar el contacto seleccionado?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                // Eliminar la fila seleccionada
+                dgvColumna.Rows.RemoveAt(dgvColumna.CurrentRow.Index);
+
+                
+                tboNombre.Clear();
+                tboApellido.Clear();
+                tboCorreo.Clear();
+                mtbTelefono.Clear();
+                cboCategoria.SelectedIndex = -1;
+                tboNombre.Focus();
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //Comprobar que hay una fila seleccionada
+            if (dgvColumna.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione el contacto que quiera editar");
+                return;
+            }
+            //Confirmacion antes de editar
+            var resultado = MessageBox.Show(
+                "Quiere editar el contacto seleccionado?",
+                "Confirmar edición",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                //Editar la fila seleccionada
+                dgvColumna.CurrentRow.Cells[0].Value = tboNombre.Text.Trim();
+
+
+                tboNombre.Clear();
+                tboApellido.Clear();
+                tboCorreo.Clear();
+                mtbTelefono.Clear();
+                cboCategoria.SelectedIndex = -1;
+                tboNombre.Focus();
             }
         }
     }
